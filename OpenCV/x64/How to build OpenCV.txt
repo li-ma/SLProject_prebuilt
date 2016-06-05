@@ -1,4 +1,4 @@
-How to build OpenCV with Contributions on Windows with VS2015(vc14):
+How to build OpenCV with Contributions on Windows with VS2013(vc12):
 - cd into a directory where you clone opencv and opencv_contrib
 - Clone OpenCV with: git clone https://github.com/Itseez/opencv_contrib.git
 - Clone OpenCV Contributions with: git clone https://github.com/Itseez/opencv_contrib.git
@@ -6,9 +6,10 @@ How to build OpenCV with Contributions on Windows with VS2015(vc14):
   - Set the source code path to the top-level opencv folder
   - Set the build path to .../opencv/build (it will create the folder)
   - Type "extra" in the search field to find OPENCV_EXTRA_MODULES_PATH and set it to the opencv_contrib/modules folder
-  - Disable the option ENABLE_PRECOMPILED_HEADERS
   - Press Configure
   - Press Generate
-- Go to the build folder and open the opencv.sln solution file in VS2015 
+- Go to the build folder and open the opencv.sln solution file in VS2013 
   - Set the configuration to Release/x64
   - Build the ALL_BUILD project
+  - After successful build build CMakeTargets/INSTALL
+  - Copy all from opencv\build\install\x64\vc12\ into SLProject\_lib\prebuilt\OpenCV\x64\vc12\
