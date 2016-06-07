@@ -1,6 +1,6 @@
 How to build OpenCV with Contributions on Windows with VS2013(vc12):
 - cd into a directory where you clone opencv and opencv_contrib
-- Clone OpenCV with: git clone https://github.com/Itseez/opencv_contrib.git
+- Clone OpenCV with: git clone https://github.com/Itseez/opencv.git
 - Clone OpenCV Contributions with: git clone https://github.com/Itseez/opencv_contrib.git
 - Open CMake GUI Application.
   - Set the source code path to the top-level opencv folder
