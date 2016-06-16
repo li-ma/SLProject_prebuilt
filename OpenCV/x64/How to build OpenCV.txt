@@ -1,4 +1,4 @@
-How to build OpenCV with Contributions on Windows with VS2013(vc12):
+How to build OpenCV with Contributions on Windows with VisualStudio:
 - cd into a directory where you clone opencv and opencv_contrib
 - Clone OpenCV with: git clone https://github.com/Itseez/opencv.git
 - Clone OpenCV Contributions with: git clone https://github.com/Itseez/opencv_contrib.git
@@ -8,8 +8,12 @@ How to build OpenCV with Contributions on Windows with VS2013(vc12):
   - Type "extra" in the search field to find OPENCV_EXTRA_MODULES_PATH and set it to the opencv_contrib/modules folder
   - Press Configure
   - Press Generate
-- Go to the build folder and open the opencv.sln solution file in VS2013 
+- Go to the build folder and open the opencv.sln solution file in Visual Studio
+  - Set the configuration to Debug/x64
+    - Build the ALL_BUILD project
+    - After successful build build CMakeTargets/INSTALL
+    - Copy all from opencv\build\install\x64\vc??\ into SLProject\_lib\prebuilt\OpenCV\x64\vc??\
   - Set the configuration to Release/x64
-  - Build the ALL_BUILD project
-  - After successful build build CMakeTargets/INSTALL
-  - Copy all from opencv\build\install\x64\vc12\ into SLProject\_lib\prebuilt\OpenCV\x64\vc12\
+    - Build the ALL_BUILD project
+    - After successful build build CMakeTargets/INSTALL
+    - Copy all from opencv\build\install\x64\vc??\ into SLProject\_lib\prebuilt\OpenCV\x64\vc??\
