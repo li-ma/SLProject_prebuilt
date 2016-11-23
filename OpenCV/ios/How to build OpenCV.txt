@@ -10,5 +10,6 @@ How to build OpenCV with Contributions for iOS:
   - Press Generate
 - open a terminal and cd to opencv/platforms/ios/
   - chmod +x build_framework.py
+  - if you want to reduce the framework size, remove unneeded architectures at line 199 of build_framework.py (currently only arm64 is built)
   - run ./build_framework.py --opencv ../.. --contrib ../../../opencv_contrib ./build
   - the result will be saved in the folder build/opencv2.framework
