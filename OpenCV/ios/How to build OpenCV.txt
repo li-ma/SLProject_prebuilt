@@ -1,0 +1,14 @@
+How to build OpenCV with Contributions for iOS:
+- cd into a directory where you clone opencv and opencv_contrib
+- Clone OpenCV with: git clone https://github.com/Itseez/opencv.git
+- Clone OpenCV Contributions with: git clone https://github.com/Itseez/opencv_contrib.git
+- Open CMake GUI Application.
+  - Set the source code path to the top-level opencv folder
+  - Set the build path to .../opencv/build (it will create the folder)
+  - Type "extra" in the search field to find OPENCV_EXTRA_MODULES_PATH and set it to the opencv_contrib/modules folder
+  - Press Configure
+  - Press Generate
+- open a terminal and cd to opencv/platforms/ios/
+  - chmod +x build_framework.py
+  - run ./build_framework.py --opencv ../.. --contrib ../../../opencv_contrib ./build
+  - the result will be saved in the folder build/opencv2.framework

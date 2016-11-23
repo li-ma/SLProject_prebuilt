@@ -66,7 +66,7 @@
 /* #undef HAVE_DSHOW */
 
 /* Eigen Matrix & Linear Algebra Library */
-/* #undef HAVE_EIGEN */
+#define HAVE_EIGEN
 
 /* FFMpeg video library */
 /* #undef HAVE_FFMPEG */
@@ -188,3 +188,9 @@
 
 /* gPhoto2 library */
 /* #undef HAVE_GPHOTO2 */
+
+/* VA library (libva) */
+/* #undef HAVE_VA */
+
+/* Intel VA-API/OpenCL */
+/* #undef HAVE_VA_INTEL */
