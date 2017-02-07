@@ -17,3 +17,5 @@ How to build OpenCV with Contributions on Windows with VisualStudio:
     - Build the ALL_BUILD project
     - After successful build build CMakeTargets/INSTALL
     - Copy all from opencv\build\install\x64\vc??\ into SLProject\_lib\prebuilt\OpenCV\x64\vc??\
+	
+- Copy all files from the folder opencv\build\install\include\ to SLProject/lib_SLExternal/opencv/include

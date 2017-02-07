@@ -1,0 +1,19 @@
+How to build OpenCV with Contributions on Mac:
+- cd into a directory where you clone opencv and opencv_contrib
+- Clone OpenCV with: git clone https://github.com/Itseez/opencv.git
+- Clone OpenCV Contributions with: git clone https://github.com/Itseez/opencv_contrib.git
+- Open CMake GUI Application.
+  - Set the source code path to the top-level opencv folder
+  - Set the build path to .../opencv/build (it will create the folder)
+  - Press Configure
+    - Choose "Unix Makefiles" as the generator
+  - Type "extra" in the search field to find OPENCV_EXTRA_MODULES_PATH and set it to the opencv_contrib/modules folder
+  - Press Configure (no more red lines should appear)
+  - Press Generate
+- In the terminal go to the build folder
+  - Type make to start the build process
+
+- Copy all files from the folder opencv/build/lib to SLProject/_lib/prebuilt/OpenCV/macx
+- Copy all files from the folder opencv/include to SLProject/lib_SLExternal/opencv/include
+- Copy all files from the folder opencv_contrib/modules/***/include folder to SLProject/lib_SLExternal/opencv/include
+

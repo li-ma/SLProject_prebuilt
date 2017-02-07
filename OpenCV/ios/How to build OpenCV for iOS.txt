@@ -1,0 +1,45 @@
+How to build OpenCV with Contributions for iOS:
+- cd into a directory where you clone opencv and opencv_contrib
+- Clone OpenCV with: git clone https://github.com/Itseez/opencv.git
+- Clone OpenCV Contributions with: git clone https://github.com/Itseez/opencv_contrib.git
+- Open CMake GUI Application.
+  - Set the source code path to the top-level opencv folder
+  - Set the build path to .../opencv/build (it will create the folder)
+  - Type "extra" in the search field to find OPENCV_EXTRA_MODULES_PATH and set it to the opencv_contrib/modules folder
+  - Press Configure
+  - Press Generate
+- open a terminal and cd to opencv/platforms/ios/
+  - You must have cmake installed for the terminal (e.g. with sudo port install cmake)
+  - chmod +x build_framework.py
+  - if you want to reduce the framework size, remove unneeded architectures (e.g. armv7, armv7s, i386) build_framework.py (currently only arm64 is built)
+    I did it like this:
+
+    #b = iOSBuilder(args.opencv, args.contrib, args.dynamic, args.bitcodedisabled, args.without,
+    #    [
+    #        (["armv7", "arm64"], "iPhoneOS"),
+    #    ] if os.environ.get('BUILD_PRECOMMIT', None) else
+    #    [
+    #        (["armv7", "armv7s", "arm64"], "iPhoneOS"),
+    #        (["i386", "x86_64"], "iPhoneSimulator"),
+    #    ])
+        
+    b = iOSBuilder(args.opencv, args.contrib, args.dynamic, args.bitcodedisabled, args.without,
+        [
+            (["arm64"], "iPhoneOS"),
+        ] if os.environ.get('BUILD_PRECOMMIT', None) else
+        [
+            (["arm64"], "iPhoneOS"),
+            (["x86_64"], "iPhoneSimulator"),
+        ])
+
+
+
+  - run ./build_framework.py --opencv ../.. --contrib ../../../opencv_contrib ./build
+  - the result will be saved in the folder build/opencv2.framework
+
+
+- Copy the file opencv/platforms/ios/build/opencv2.framework to SLProject/_lib/prebuilt/OpenCV/ios
+- Copy all files from the folder opencv/include to SLProject/lib_SLExternal/opencv/include
+- Copy all files from the folder opencv_contrib/modules/***/include folder to SLProject/lib_SLExternal/opencv/include
+
+
