@@ -37,6 +37,9 @@ How to build OpenCV with Contributions for iOS:
   - run ./build_framework.py --opencv ../.. --contrib ../../../opencv_contrib ./build
   - the result will be saved in the folder build/opencv2.framework
 
+The OpenCV library in opencv2.framework/Versions/A/opencv2 is larger than 100MB:
+  - You have to use https://git-lfs.github.com/
+
 
 - Copy the file opencv/platforms/ios/build/opencv2.framework to SLProject/_lib/prebuilt/OpenCV/ios
 - Copy all files from the folder opencv/include to SLProject/lib_SLExternal/opencv/include
