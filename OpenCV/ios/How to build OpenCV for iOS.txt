@@ -33,10 +33,27 @@ How to build OpenCV with Contributions for iOS:
         ])
 
 
+#Build with as less modules as possible to make the framework less than 100MB
 
-  - run ./build_framework.py --opencv ../.. --contrib ../../../opencv_contrib ./build
+  - run ./build_framework.py --opencv ../.. --contrib ../../../opencv_contrib --without bioinspired --without cudafeatures2d --without cudafilters --without cudaimgproc --without cudalegacy --without cudaobjdetect --without cudaoptflow --without cudawarping --without cudaarithm --without cudabgsegm --without cudacodec --without cudastereo --without cudev --without dpm --without fuzzy --without hdf --without matlab --without photo --without plot --without reg --without rgbd --without saliency --without superres --without structured_light --without text --without viz --without videostab --without xphoto --without ccalib --without freetype ./build
+
+
+
+#--without face          \
+#--without line_descriptor   \
+#--without sfm           \
+#--without stereo        \
+#--without surface_matching  \
+#--without stitching     \
+#--without dnn           \
+#--without datasets      \
+#--without shape         \
+#--without tracking      \
+#--without aruco         \
+#--without bgsegm        \
+#--without cvv           \
+
   - the result will be saved in the folder build/opencv2.framework
-
 
 - Copy the file opencv/platforms/ios/build/opencv2.framework to SLProject/_lib/prebuilt/OpenCV/ios
 - Copy all files from the folder opencv/include to SLProject/lib_SLExternal/opencv/include
